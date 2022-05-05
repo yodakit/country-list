@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed bg w-full flex items-center justify-between py-4 px-8 shadow-md dark:bg-slate-800 dark:text-white ease-in-out duration-300"
+    class="relative bg w-full flex items-center justify-between py-4 px-8 shadow-md dark:bg-slate-800 dark:text-white ease-in-out duration-300"
   >
     <h1 class="text-2xl font-medium">Where in the World?</h1>
     <button @click="switchTheme" class="uppercase flex items-center py-1 px-3 rounded-md ease-in-out duration-300 hover:bg-slate-200 hover:dark:bg-slate-700">
@@ -19,12 +19,12 @@ export default {
     }
   },
   created () {
-    this.themeMode = localStorage.getItem("theme") || 'light';
+    this.themeMode = localStorage.getItem("reverseTheme") || 'light';
     this.switchTheme();
   },
   methods: {
     switchTheme() {
-      localStorage.setItem("theme", this.themeMode);
+      localStorage.setItem("reverseTheme", this.themeMode);
       if (this.themeMode === 'light') {
         document.documentElement.classList.add('dark');
         this.themeIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
