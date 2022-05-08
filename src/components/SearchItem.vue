@@ -1,5 +1,5 @@
 <template>
-  <label class="w-96 flex items-start shadow-md rounded-md p-3 shadow-slate-400 dark:shadow-none bg-white dark:bg-slate-800 dark:duration-300">
+  <label class="lg:w-96 md:w-72 sm:w-56 w-full flex items-start shadow-md rounded-md p-3 shadow-slate-400 dark:shadow-none bg-white dark:bg-slate-800 dark:duration-300">
     <input :value="modelValue" @input="updateSearch" type="text" placeholder="Search" class="peer outline-none w-full bg-white dark:text-white dark:bg-inherit focus:placeholder:opacity-0">
     <div class="mr-2 order-first peer-focus:opacity-0 ease-in-out duration-300">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" :fill="colorIcon">
@@ -21,17 +21,12 @@
         type: String,
         required: true,
       },
-      isDarkMode: {
-        type: Boolean,
-        default: false
+      colorIcon: {
+        type: String,
+        required: true,
       },
     },
     emits: ['update:modelValue'],
-    computed: {
-      colorIcon() {
-        return this.isDarkMode ? "rgb(255,255,255)" : "rgba(0,0,0,.5)"; 
-      }
-    },
     methods: {
       updateSearch(event) {
         this.$emit("update:modelValue", event.target.value);
