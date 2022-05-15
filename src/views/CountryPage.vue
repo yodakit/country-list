@@ -22,10 +22,12 @@
     </button>
     <div class="flex flex-col lg:flex-row">
       <img
+        v-if="country.imgSrc !== ''"
         :src="country.imgSrc"
-        :alt="country.name + ' flags'"
+        alt="flags"
         class="w-full lg:w-1/2 mb-3 lg:mb-0 border-2"
       />
+      <div v-else class="w-full lg:w-1/2 mb-3 lg:mb-0 border-2 bg-slate-200 dark:bg-slate-800"></div>
       <div class="w-full lg:w-1/2 lg:p-9">
         <h1 class="text-3xl mb-4">
           <strong>{{ country.name }}</strong>
