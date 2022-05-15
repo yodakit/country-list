@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative bg w-full flex items-center justify-between py-4 px-8 shadow-md dark:bg-slate-800 dark:text-white ease-in-out duration-300"
+    class="sticky top-0 z-10 bg-white w-full flex items-center justify-between py-4 px-8 shadow-md dark:bg-slate-800 dark:text-white ease-in-out duration-300"
   >
     <h1 class="text-2xl font-medium">Where in the World?</h1>
     <button @click="switchTheme" class="uppercase flex items-center py-1 px-3 rounded-md ease-in-out duration-300 hover:bg-slate-200 hover:dark:bg-slate-700">
